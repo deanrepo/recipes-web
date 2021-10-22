@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Recipes from './components/Recipes';
+import NewRecipe from './components/NewRecipe';
+import { Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+
+    return (
+      <div>
+        <Navbar />
+        <Route exact path="/" component={Recipes} />
+        <Route exact path="/newRecipe" component={NewRecipe} />
+      </div>
+    )
+  }
 }
 
 export default App;
